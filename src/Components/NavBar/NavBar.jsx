@@ -1,7 +1,5 @@
 import { TbGift, TbLogin2, TbSearch } from "react-icons/tb";
 import logo from "../../assets/logo.png";
-import { Link } from "react-router-dom";
-import { BiLogOutCircle } from "react-icons/bi";
 
 const NavBar = () => {
   const links = (
