@@ -1,138 +1,68 @@
-import { TbLogin2, TbSearch } from "react-icons/tb";
-import logo from "../../assets/logo.jpg";
+import { TbGift, TbLogin2, TbSearch } from "react-icons/tb";
+import logo from "../../assets/logo.png";
 import { Link } from "react-router-dom";
+import { BiLogOutCircle } from "react-icons/bi";
 
 const NavBar = () => {
   const links = (
     <>
-      <li>
-        <a href="">Audio</a>
+      <li className="relative group">
+        <a href="#" className="cursor-pointer">Phone & Tablets</a>
+        <ul className="absolute left-0 top-full mt-2 hidden group-hover:block bg-white shadow-lg rounded-lg z-50 min-w-[180px]">
+          {["Apple", "Samsung", "Vivo", "Oppo", "Realme", "Huawei", "Honor"].map((brand, index) => (
+            <li key={index}>
+              <a href="#" className="block px-4 py-2 hover:bg-gray-100">{brand}</a>
+            </li>
+          ))}
+        </ul>
       </li>
-      <li>
-        <a href="">Phone</a>
-      </li>
-      <li>
-        <a href="">Tablet</a>
-      </li>
-      <li>
-        <a href="">Power Bank</a>
-      </li>
-      <li>
-        <a href="">Accessories</a>
-      </li>
+
+      <li><a href="">Laptop & Desktop</a></li>
+      <li><a href="">Audio</a></li>
+      <li><a href="">Power & Accessories</a></li>
+      <li><a href="">Fitness & Wearable</a></li>
+      <li><a href="">Peripherals</a></li>
+      <li><a href="">Cover & Glass</a></li>
+      <li><a href="">Smart Electronics</a></li>
+      <li><a href="">Used Device</a></li>
     </>
   );
 
   return (
-    <div className=" bg-[#081621]">
-      <div className="navbar container mx-auto">
-        <div className="navbar-start">
-          {/* <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16"
-                />
-              </svg>
+    <div>
+      <div className="navbar bg-secondary">
+
+        <div className="container mx-auto text-white flex justify-between items-center">
+
+          <div className="hidden lg:flex items-center space-x-16">
+            <a className="text-secondary text-lg font-bold rounded-lg p-2" href=""><img className="h-[50px]" src={logo} alt="" /></a>
+            <div className="form-control relative flex items-center">
+              <input className="p-2 rounded-full w-[400px]" type="text" name="search" id="" placeholder="Search here" />
+              <button className="absolute right-4 text-secondary" type="submit"><TbSearch className="text-3xl font-bold" strokeWidth={2.5}></TbSearch></button>
             </div>
-            <ul
-              tabIndex={0}
-              className="text-white menu menu-sm dropdown-content  rounded-box z-[1] mt-3 w-52 p-2 shadow"
-            >
-              {links}
-            </ul>
-          </div> */}
-
-          <div className="flex gap-4">
-            <a className="btn bg-[#ffc000] font-extrabold text-xl rounded-lg">
-              <span className="text-[#191c1e]">Gadget</span>{" "}
-              <span className="text-[#191c1e]">&</span>{" "}
-              <span className="text-[#191c1e]">Park</span>
-            </a>
-
-            <div className="form-control">
-              <input
-                type="text"
-                placeholder="Search"
-                className="input input-bordered lg:w-96 md:w-auto"
-              />
+            <div>
+              <button className="flex items-center gap-2">
+                <TbGift className="text-4xl text-primary"></TbGift>
+                <p className="text-white text-xm">Boishakhi <br /> Offer</p>
+              </button>
             </div>
           </div>
+
+          <div className="hidden lg:flex">
+            <button className="btn bg-primary text-secondary text-lg flex items-center gap-2 rounded-xl px-4 py-2">
+              <TbLogin2 className="text-xl font-bold" />
+              <span className="font-bold">Login</span>
+            </button>
+          </div>
+
         </div>
-        <div className="navbar-end">
-          <a className="btn bg-[#ffc000] text-[#191c1e] font-bold rounded-lg">
-            <TbLogin2 className="text-xl"></TbLogin2>Login
-          </a>
-        </div>
+
       </div>
 
-      <div className="navbar text-white container mx-auto">
-
-        {/* <div className="navbar-start">
-          <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16" />
-              </svg>
-            </div>
-
-            <ul className="flex space-x-4 text-lg font-semibold mx-auto">
-              {links}
-            </ul>
-          </div>
-        </div> */}
-
-
-        <div className="navbar-start">
-          <div className="dropdown text-[#191c1e]">
-            <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden text-white">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h8m-8 6h16" />
-              </svg>
-            </div>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
-
-              {links}
-
-            </ul>
-          </div>
-        </div>
-
-        <div className="navbar hidden lg:flex">
-          <ul className="flex space-x-4 text-lg font-semibold mx-auto">
-            {links}
-          </ul>
-        </div>
-
+      <div className="shadow py-2">
+        <ul className="flex gap-4 justify-center font-semibold">
+          {links}
+        </ul>
       </div>
     </div>
   );
