@@ -28,11 +28,11 @@ const NavBar = () => {
 
   return (
     <div>
-      <div className="navbar bg-secondary">
+      <div className="hidden lg:flex navbar bg-secondary">
 
         <div className="container mx-auto text-white flex justify-between items-center">
 
-          <div className="hidden lg:flex items-center space-x-16">
+          <div className="flex items-center space-x-16">
             <a className="text-secondary text-lg font-bold rounded-lg p-2" href=""><img className="h-[50px]" src={logo} alt="" /></a>
             <div className="form-control relative flex items-center">
               <input className="p-2 rounded-full w-[400px]" type="text" name="search" id="" placeholder="Search here" />
