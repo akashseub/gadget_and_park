@@ -1,7 +1,12 @@
 import { TbGift, TbLogin2, TbSearch } from "react-icons/tb";
 import logo from "../../assets/logo.png";
+import { useState } from "react";
+import { FiMenu } from "react-icons/fi";
 
 const NavBar = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
   const links = (
     <>
       <li className="relative group">
@@ -25,6 +30,7 @@ const NavBar = () => {
       <li><a href="">Used Device</a></li>
     </>
   );
+
 
   return (
     <div>
@@ -57,10 +63,44 @@ const NavBar = () => {
 
       </div>
 
-      <div className="shadow py-2">
+      {/* <div className="shadow py-2">
         <ul className="flex gap-4 justify-center font-semibold">
           {links}
         </ul>
+      </div> */}
+
+      <div className="shadow py-2">
+        {/* Desktop Menu */}
+        <ul className="hidden lg:flex gap-4 justify-center font-semibold">
+          {links}
+        </ul>
+
+        {/* Mobile/Tablet Menu Toggle Button */}
+        <div className="flex justify-between items-center px-4 lg:hidden">
+
+          <button
+            className="text-2xl"
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Toggle Menu"
+          >
+            <FiMenu />
+          </button>
+
+          <img className="h-[50px]" src={logo} alt="" />
+
+          <button className="btn bg-primary text-secondary text-lg flex items-center gap-2 rounded-xl px-4 py-2">
+            <TbLogin2 className="text-xl font-bold" />
+            <span className="font-bold">Login</span>
+          </button>
+
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        {isOpen && (
+          <ul className="flex flex-col gap-2 mt-2 px-4 font-semibold lg:hidden">
+            {links}
+          </ul>
+        )}
       </div>
     </div>
   );
