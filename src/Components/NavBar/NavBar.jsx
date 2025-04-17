@@ -10,14 +10,17 @@ const NavBar = () => {
   const links = (
     <>
       <li className="relative group">
-        <a href="#" className="cursor-pointer">Phone & Tablets</a>
-        <ul className="absolute left-0 top-full mt-2 hidden group-hover:block bg-white shadow-lg rounded-lg z-50 min-w-[180px]">
-          {["Apple", "Samsung", "Vivo", "Oppo", "Realme", "Huawei", "Honor"].map((brand, index) => (
-            <li key={index}>
-              <a href="#" className="block px-4 py-2 hover:bg-gray-100">{brand}</a>
-            </li>
-          ))}
-        </ul>
+        <a href="#" className="cursor-pointer hover:text-primary group-hover:text-primary">Phone & Tablets</a>
+
+        <div className="absolute left-0 top-full hidden group-hover:block z-50">
+          <ul className="flex flex-col bg-white border-t-4 border-primary shadow-lg rounded-lg min-w-[180px]">
+            {["Apple", "Samsung", "Vivo", "Oppo", "Realme", "Huawei", "Honor"].map((brand, index) => (
+              <li key={index}>
+                <a href="#" className="block px-4  hover:bg-primary">{brand}</a>
+              </li>
+            ))}
+          </ul>
+        </div>
       </li>
 
       <li><a href="">Laptop & Desktop</a></li>
@@ -69,7 +72,7 @@ const NavBar = () => {
         </ul>
       </div> */}
 
-      <div className="shadow py-2">
+      <div className="shadow text-base/8 bg-secondary lg:bg-white">
         {/* Desktop Menu */}
         <ul className="hidden lg:flex gap-4 justify-center font-semibold">
           {links}
@@ -79,7 +82,7 @@ const NavBar = () => {
         <div className="flex justify-between items-center px-4 lg:hidden">
 
           <button
-            className="text-2xl"
+            className="text-2xl text-white"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
           >
@@ -97,7 +100,7 @@ const NavBar = () => {
 
         {/* Mobile Dropdown Menu */}
         {isOpen && (
-          <ul className="flex flex-col gap-2 mt-2 px-4 font-semibold lg:hidden">
+          <ul className="flex flex-col gap-2 mt-2 px-4 font-semibold lg:hidden bg-white">
             {links}
           </ul>
         )}
