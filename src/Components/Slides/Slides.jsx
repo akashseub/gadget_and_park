@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { IoMdArrowDropleftCircle, IoMdArrowDroprightCircle } from 'react-icons/io';
 
 const Slides = () => {
     const products = [
@@ -51,22 +52,22 @@ const Slides = () => {
                             quasi. In deleniti eaque aut repudiandae et a id nisi.
                         </p>
                     </div>
-                    <button className="btn btn-primary">Get Started</button>
+                    <button className="btn bg-primary text-black font-bold">Order Now!</button>
                 </div>
             </div>
 
             {/* Navigation Buttons */}
             <button
                 onClick={handlePrev}
-                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white shadow rounded-full p-2"
+                className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-primary shadow rounded-full p-2"
             >
-                ◀
+                <IoMdArrowDropleftCircle />
             </button>
             <button
                 onClick={handleNext}
-                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white shadow rounded-full p-2"
+                className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-primary shadow rounded-full p-2"
             >
-                ▶
+                <IoMdArrowDroprightCircle />
             </button>
         </div>
     );

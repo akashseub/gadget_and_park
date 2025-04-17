@@ -36,7 +36,7 @@ const NavBar = () => {
 
 
   return (
-    <div>
+    <div className="">
       <div className="hidden lg:flex navbar bg-secondary">
 
         <div className="container mx-auto text-white flex justify-between items-center">
