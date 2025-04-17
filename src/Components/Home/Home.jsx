@@ -1,6 +1,7 @@
 import banner1 from '../../assets/banner1.png'
 import banner2 from '../../assets/banner2.png'
 import banner3 from '../../assets/banner3.png'
+import DiscountProducts from '../DiscountProducts/DiscountProducts';
 import FeatureCategories from '../FeatureCategories/FeatureCategories';
 import Slides from '../Slides/Slides';
 
@@ -23,6 +24,8 @@ const Home = () => {
             </div>
 
             <FeatureCategories></FeatureCategories>
+
+            <DiscountProducts></DiscountProducts>
         </div>
     );
 };
